@@ -1,39 +1,42 @@
+/* Estilos generales */
 header {
   background-color: #333;
   color: #fff;
   padding: 10px;
 }
 
-body{
+body {
   margin: 5%;
 }
-a{
+
+a {
   text-decoration: none;
   color: black;
 }
-div#quevayaporfi{
+
+div#quevayaporfi {
   padding: 5svh;
-  padding-top:5svh ;
+  padding-top: 5svh;
   text-decoration: none;
   color: black;
   background-color: lightblue;
 }
 
-.noticias{
+.noticias {
   padding-left: 6.5svh;
   padding-right: 6.5svh;
   color: #333;
   text-decoration: none;
   font-size: 14px;
-  transition: background-color 0.2s
+  transition: background-color 0.2s;
 }
 
-a.view-details{
+a.view-details {
   padding-left: 1.5svh;
   padding-right: 1.5svh;
 }
 
-button{
+button {
   background-color: lightgray;
   padding: 12px 20px;
   font-size: 16px;
@@ -43,16 +46,15 @@ button{
   cursor: pointer;
 }
 
-[popover]{
+[popover] {
   left: anchor(top);
   bottom: anchor(left);
-  margin: 6.5% ;
+  margin: 6.5%;
   border: 1px solid #ddd;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
   border-radius: 8px;
   position: relative;
 }
-
 
 /* Contenedor de artículos en grid */
 .grid {
@@ -62,15 +64,12 @@ button{
   margin-top: 20px;
 }
 
-
-
 .article {
   background-color: #fff;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-
 
 .description {
   display: -webkit-box;
@@ -79,6 +78,7 @@ button{
   overflow: hidden;
 }
 
+/* Estilos responsivos */
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: 1fr 1fr;

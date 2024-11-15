@@ -4,6 +4,7 @@ class NewsViewer extends HTMLElement {
   constructor() {
     super();
     this.articles = [];
+    
   }
 
   connectedCallback() {
@@ -12,11 +13,11 @@ class NewsViewer extends HTMLElement {
   }
 
   async loadAllArticles() {
-    const url = this.textContent;
+    const section = this.getAttribute("section")
     try {
       // URLs para las categorías
       const urls = [
-        'https://news-foniuhqsba-uc.a.run.app/' + url
+        'https://news-foniuhqsba-uc.a.run.app/' + section
       ];
 
       // Cargar todos los artículos desde las URLs
