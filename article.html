@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle del Artículo</title>
+  <style>
+    body {
+      margin: 5svh;
+    }
+    /* Contenedor principal */
+    custom-article.article {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #ffffff;
+      border-radius: 10px;
+
+      font-family: Arial, sans-serif;
+      color: #333;
+      position: relative;
+    }
+
+    /* Título del artículo */
+    .title {
+      font-size: 26px;
+      color: #333;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-weight: bold;
+      line-height: 1.4;
+      padding-left: 10px;
+    }
+
+    /* Autor */
+    .author {
+      font-size: 14px;
+      color: #555;
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+
+    /* Descripción del artículo */
+    .description {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+      margin-top: 15px;
+    }
+
+    /* Separador */
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+  
+    .back-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #ffffff;
+      background-color: #4A90E2;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+    }
+
+ 
+
+  </style>
+</head>
+<body>
+
+  <custom-article class="article">
+    <h3 class="title">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit
+    </h3>
+    <p><strong>Autor:</strong> <span class="author">Anonymous</span></p>
+    <p class="description">Office woman stimulate corporation military-grade refrigerator systemic rifle otaku. Tanto sub-orbital kanji human office drugs lights garage voodoo god fetishism sunglasses sentient marketing urban. Chiba human jeans bridge footage neon industrial grade market numinous fluidity man urban.</p>
+    <hr>
+    <a href="index.html" class="back-button">← Volver</a>
+  </custom-article>
+
+  <script>
+    const getId = () => {
+      const searchParams = new URLSearchParams(location.search.slice(1));
+      return Number(searchParams.get('id'));
+    }
+    class CustomArticle extends HTMLElement {
+      constructor() {
+        super()
+        this.id = getId()
+      }
+
+      connectedCallback() {
+        this.render()
+      }
+
+      async loadArticles() {
+        return fetch('https://news-foniuhqsba-uc.a.run.app').then(res => res.json())
+      }
+
+      async render() {
+        // Obtener todos los artículos
+        const articles = await this.loadArticles()
+        // Filtrar el artículo por el ID
+        const article = articles.find(article => article.id == this.id)
+        
+        // Rellenar la plantilla con los datos del artículo
+        this.querySelector('.title').textContent = article.headline;
+        this.querySelector('.author').textContent = article.author;
+        this.querySelector('.description').innerHTML = article.body;
+      }
+    }
+
+    customElements.define('custom-article', CustomArticle);
+  </script>
+
+</body>
+</html>

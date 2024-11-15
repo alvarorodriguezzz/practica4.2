@@ -1,0 +1,49 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visor de Noticias Falsas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Artículos de Noticias Falsas</h1>
+    <!-- Componente personalizado -->
+    <button popovertarget="quevayaporfi" top>Categorías</button>
+    <div id="quevayaporfi" popover>
+        <a class="noticias" href="worldNews.html">World News</a>
+        <a class="noticias" href="sport.html">Sports</a>
+        <a class="noticias" href="finance.html">Finances</a>
+        <a class="noticias" href="technology.html">Technology</a>
+        <a class="noticias" href="Entertaiment.html">Entertaiment</a>
+    </div>
+  </header>
+
+
+  <news-viewer class="grid">Finance
+
+  <!-- Plantilla para un artículo -->
+  <template id="article-template">
+    <section>
+      <div class="article">
+        <h3 class="title"></h3>
+        <p><strong>Autor:</strong> <span class="author"></span></p>
+        <p class="description">Esta es una descripción de ejemplo de una noticia importante.</p>
+        <a href="article.html" class="view-details">Leer más</a>
+        <hr>
+      </div>
+    </section>
+  </template>
+  
+</news-viewer>
+
+  <script src="news-viewer.js"></script>
+
+</body>
+
+</html>
