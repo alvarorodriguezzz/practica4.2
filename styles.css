@@ -78,3 +78,74 @@ button{
   -webkit-box-orient: vertical;  
   overflow: hidden;
 }
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .noticias {
+    font-size: 13px;
+    padding-left: 4svh;
+    padding-right: 4svh;
+  }
+
+  button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  body {
+    margin: 3%;
+  }
+
+  header {
+    padding: 8px;
+    text-align: center;
+  }
+
+  .noticias {
+    font-size: 12px;
+    padding-left: 3svh;
+    padding-right: 3svh;
+  }
+
+  button {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    font-size: 18px;
+    padding: 6px;
+  }
+
+  .noticias {
+    font-size: 11px;
+    padding-left: 2svh;
+    padding-right: 2svh;
+  }
+
+  div#quevayaporfi {
+    padding: 3svh;
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  a.view-details {
+    padding-left: 1svh;
+    padding-right: 1svh;
+  }
+}
